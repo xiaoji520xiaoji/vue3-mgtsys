@@ -1,9 +1,10 @@
 <template>
   <div class="home">
     <p>{{ num }}</p>
+    <div>{{ info }}</div>
     <p>{{ info.id }}</p>
-    <p>{{ info.name }}</p>
-    <p>{{ info.age }}</p>
+    <p>{{ info.Name }}</p>
+    <p>{{ info.Age }}</p>
     <button @click="addFun">加1</button>
     <button @click="addAgeFun">年龄</button>
   </div>
@@ -20,9 +21,9 @@ export default {
   setup() {
     let num = ref(1)
     let info = reactive({
-      id: 1,
-      name: 'Lester',
-      age: 26,
+      ID: 1,
+      Name: 'Lester',
+      Age: 26,
     })
     // onBeforeMount(()=> {
     //   console.log('onBeforeMount');
