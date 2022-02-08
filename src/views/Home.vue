@@ -1,18 +1,74 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <p>{{ num }}</p>
+    <p>{{ info.id }}</p>
+    <p>{{ info.name }}</p>
+    <p>{{ info.age }}</p>
+    <button @click="addFun">加1</button>
+    <button @click="addAgeFun">年龄</button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
+import { 
+  // onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted, onErrorCaptured, 
+onRenderTracked, onRenderTriggered, ref, reactive } from 'vue'
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  setup() {
+    let num = ref(1)
+    let info = reactive({
+      id: 1,
+      name: 'Lester',
+      age: 26,
+    })
+    // onBeforeMount(()=> {
+    //   console.log('onBeforeMount');
+    // })
+    // onMounted(()=> {
+    //   console.log('onMounted');
+    // }) 
+    // onBeforeUpdate(()=> {
+    //   console.log('onBeforeUpdate');
+    // })
+    // onUpdated(()=> {
+    //   console.log('onUpdated');
+    // })
+    // onBeforeUnmount(()=> {
+    //   console.log('onBeforeUnmount');
+    // })
+    // onUnmounted(()=> {
+    //   console.log('onUnmounted');
+    // })
+    // onErrorCaptured(err=> {
+    //   console.log(err);
+    // })
+    onRenderTracked(obj=> {
+      console.log(obj);
+    })
+    onRenderTriggered(obj=> {
+      console.log(obj);
+    })
+
+    let addFun = ()=> {
+      num.value++
+      console.log(num);
+    }
+
+    let addAgeFun = ()=> {
+      info.age++
+    }
+
+    console.log('setUp执行');
+
+    return{
+      num,
+      addFun,
+      info,
+      addAgeFun,
+    }
   }
 }
 </script>
