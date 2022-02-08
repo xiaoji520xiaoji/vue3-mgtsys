@@ -59,7 +59,7 @@ export default {
     }
 
     let addAgeFun = ()=> {
-      info.age++
+      info.Age++
     }
 
     console.log('setUp执行');
