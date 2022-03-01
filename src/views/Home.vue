@@ -5,7 +5,7 @@
     <p>{{ info.id }}</p>
     <p>{{ info.Name }}</p>
     <p>{{ info.Age }}</p>
-    <button @click="addFun">加1</button>
+    <button @click="addFun">加3</button>
     <button @click="addAgeFun">年龄</button>
   </div>
 </template>
